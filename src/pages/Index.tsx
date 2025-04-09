@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import ScratchGameCard from '@/components/ScratchGameCard';
 import NetworkIndicator from '@/components/NetworkIndicator';
 import { Toaster } from 'sonner';
@@ -25,6 +26,16 @@ const Index = () => {
     <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-gray-200 p-4 relative overflow-hidden">
       {/* Network status indicator */}
       <NetworkIndicator />
+      
+      {/* Developer mode link */}
+      <div className="absolute top-4 right-4">
+        <Link 
+          to="/iframe-demo" 
+          className="px-3 py-1 bg-indigo-500 text-white text-sm rounded hover:bg-indigo-600 transition-colors"
+        >
+          Iframe Demo
+        </Link>
+      </div>
       
       {/* Loading screen */}
       {isLoading ? (
